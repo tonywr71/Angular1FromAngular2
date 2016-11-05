@@ -108,7 +108,7 @@
     <TypeScriptCompile Include="app\app.config.ts" />
     <Content Include="app\app.css" />
     <TypeScriptCompile Include="app\app.module.ng1.ts" />
-    <TypeScriptCompile Include="app\core\checkmark\checkmark.filter.ts" />
+    <TypeScriptCompile Include="app\core\checkmark\checkmark.pipe.ts" />
     <Content Include="app\core\checkmark\checkmark.filter.spec.js" />
     <Content Include="app\core\core.module.js" />
     <Content Include="app\core\phone\phone.module.js" />

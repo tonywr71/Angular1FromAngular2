@@ -21,17 +21,23 @@
   <script src="/app/app.config.js"></script>
   <script src="/app/app.animations.js"></script>
   <script src="/app/core/core.module.js"></script>
-  <script src="/app/core/checkmark/checkmark.filter.js"></script>
+  <!-- upgraded to Angular 2 and now registered in the declaration tag on the NgModule in app.module.ts
+    <script src="/app/core/checkmark/checkmark.filter.js"></script>
+    -->
   <script src="/app/core/phone/phone.module.js"></script>
   <!--
-    
+
     This gets removed because the class is converted to Angular 2 and will be loaded via a SystemJs import
     <script src="/app/core/phone/phone.service.js"></script>
     -->
   <script src="/app/phone-list/phone-list.module.js"></script>
+  <!-- now upgraded, so remove from scripts. now to be injected via import statement
   <script src="/app/phone-list/phone-list.component.js"></script>
+    -->
   <script src="/app/phone-detail/phone-detail.module.js"></script>
+  <!-- now upgraded, so remove from scripts. now to be injected via import statement
   <script src="/app/phone-detail/phone-detail.component.js"></script>
+    -->
   <script src="/app/ng1component.js"></script>
 
   <!--End Angular 1-->
