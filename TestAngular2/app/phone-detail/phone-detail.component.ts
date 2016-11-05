@@ -1,5 +1,6 @@
 // Start Angular 2 component - no longer a need to for the angular line that adds it to the module either!
 import { Component, Inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Phone, PhoneData } from "../core/phone/phone.service";
 
 @Component({
@@ -10,11 +11,18 @@ import { Phone, PhoneData } from "../core/phone/phone.service";
 export class PhoneDetailComponent {
   phone: PhoneData;
   mainImageUrl: string;
-  // angular2: no longer have $static inject. here we use a decorator to inject the parameter
-  // I assume that by sticking it directly next to the parameter, it reduces the odds of making an ordering error.
-  // Phone doesn't need to be Injected, because the phone class is already existing within the application.
-  constructor( @Inject("$routeParams") $routeParams: angular.route.IRouteParamsService, phone: Phone) {
-    let phoneId = $routeParams["phoneId"];
+//Start V2
+////Start V1
+//  // angular2: no longer have $static inject. here we use a decorator to inject the parameter
+//  // I assume that by sticking it directly next to the parameter, it reduces the odds of making an ordering error.
+//  // Phone doesn't need to be Injected, because the phone class is already existing within the application.
+//  constructor( @Inject("$routeParams") $routeParams: angular.route.IRouteParamsService, phone: Phone) {
+////End V1
+  constructor(activatedRoute: ActivatedRoute, phone: Phone) {
+//    let phoneId = $routeParams["phoneId"];
+    let phoneId = activatedRoute.snapshot.params['phoneId'];
+//End V2
+
     phone.get(phoneId).subscribe((data: any) => {
       this.phone = data;
       this.setImage(data.images[0]);

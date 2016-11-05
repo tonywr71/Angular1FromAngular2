@@ -6,7 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!--angular1: remove all 
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/app/app.css" />
   <link rel="stylesheet" href="/app/app.animations.css" />
 
@@ -55,7 +58,9 @@
 </head>
 
 <body>
-  <my-app>Loading...</my-app>
+  <!--<my-app>Loading...</my-app>-->
+  <!--The following was injected into the page for Angular 2 to introduce the new routing service-->
+  <phonecat-app></phonecat-app>
 
   <ng1component></ng1component>
 </body>

@@ -8,19 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 // Start Angular 2 component - no longer a need to for the angular line that adds it to the module either!
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var phone_service_1 = require("../core/phone/phone.service");
 var PhoneDetailComponent = (function () {
-    // angular2: no longer have $static inject. here we use a decorator to inject the parameter
-    // I assume that by sticking it directly next to the parameter, it reduces the odds of making an ordering error.
-    // Phone doesn't need to be Injected, because the phone class is already existing within the application.
-    function PhoneDetailComponent($routeParams, phone) {
+    //Start V2
+    ////Start V1
+    //  // angular2: no longer have $static inject. here we use a decorator to inject the parameter
+    //  // I assume that by sticking it directly next to the parameter, it reduces the odds of making an ordering error.
+    //  // Phone doesn't need to be Injected, because the phone class is already existing within the application.
+    //  constructor( @Inject("$routeParams") $routeParams: angular.route.IRouteParamsService, phone: Phone) {
+    ////End V1
+    function PhoneDetailComponent(activatedRoute, phone) {
         var _this = this;
-        var phoneId = $routeParams["phoneId"];
+        //    let phoneId = $routeParams["phoneId"];
+        var phoneId = activatedRoute.snapshot.params['phoneId'];
+        //End V2
         phone.get(phoneId).subscribe(function (data) {
             _this.phone = data;
             _this.setImage(data.images[0]);
@@ -34,9 +38,8 @@ var PhoneDetailComponent = (function () {
             moduleId: module.id,
             selector: "phone-detail",
             templateUrl: "phone-detail.template.html"
-        }),
-        __param(0, core_1.Inject("$routeParams")), 
-        __metadata('design:paramtypes', [Object, phone_service_1.Phone])
+        }), 
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, phone_service_1.Phone])
     ], PhoneDetailComponent);
     return PhoneDetailComponent;
 }());

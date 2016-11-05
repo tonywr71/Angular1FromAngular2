@@ -12,6 +12,8 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var app_routing_module_1 = require('./app-routing.module');
+var ng2_app_component_1 = require("./ng2.app.component");
 var app_component_1 = require("./app.component");
 var phone_service_1 = require("./core/phone/phone.service");
 var phone_list_component_1 = require('./phone-list/phone-list.component');
@@ -22,9 +24,9 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, phone_list_component_1.PhoneListComponent, phone_detail_component_1.PhoneDetailComponent, checkmark_pipe_1.CheckmarkPipe],
-            bootstrap: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_module_1.AppRoutingModule],
+            declarations: [app_component_1.AppComponent, phone_list_component_1.PhoneListComponent, phone_detail_component_1.PhoneDetailComponent, checkmark_pipe_1.CheckmarkPipe, ng2_app_component_1.ng2AppComponent],
+            bootstrap: [ng2_app_component_1.ng2AppComponent],
             providers: [phone_service_1.Phone]
         }), 
         __metadata('design:paramtypes', [])
