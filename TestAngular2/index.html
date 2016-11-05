@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <title>Angular QuickStart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/app/app.css" />
+  <link rel="stylesheet" href="/app/app.animations.css" />
+
+  <!--Start Angular 1-->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <script src="/app/app.module.ng1.js"></script>
+  <script src="/app/app.config.js"></script>
+  <script src="/app/app.animations.js"></script>
+  <script src="/app/core/core.module.js"></script>
+  <script src="/app/core/checkmark/checkmark.filter.js"></script>
+  <script src="/app/core/phone/phone.module.js"></script>
+  <!--
+    
+    This gets removed because the class is converted to Angular 2 and will be loaded via a SystemJs import
+    <script src="/app/core/phone/phone.service.js"></script>
+    -->
+  <script src="/app/phone-list/phone-list.module.js"></script>
+  <script src="/app/phone-list/phone-list.component.js"></script>
+  <script src="/app/phone-detail/phone-detail.module.js"></script>
+  <script src="/app/phone-detail/phone-detail.component.js"></script>
+  <script src="/app/ng1component.js"></script>
+
+  <!--End Angular 1-->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function (err) { console.error(err); });
+  </script>
+</head>
+
+<body>
+  <my-app>Loading...</my-app>
+
+  <ng1component></ng1component>
+</body>
+</html>
